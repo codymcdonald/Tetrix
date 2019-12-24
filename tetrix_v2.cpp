@@ -1281,7 +1281,7 @@ void playScreenWidth( int difficulty, int &leftScreenLimit, int &rightScreenLimi
       {
       // clearScreen to 9 chars wide
       leftScreenLimit = 35;
-      rightScreenLimit = 44;
+      rightScreenLimit = 45;
       }
    }
 
@@ -1413,7 +1413,7 @@ void gameDisplay( int difficulty )
         // else if difficulty is hard
 			else if ( difficulty == HARD )
 				{
-            // clear screen to remainders of 18
+            // clear screen to remainder of 18
 				setColor ( COLOR_BLUE, COLOR_BLACK, SET_BRIGHT );
 				clearScreen ( SCRN_MIN_X+31, SCRN_MIN_Y, SCRN_MAX_X-31, SCRN_MAX_Y- 4);
             // print side bar display
