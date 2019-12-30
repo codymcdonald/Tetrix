@@ -3,6 +3,7 @@ HEADER FILES
 -----------------------------------------------------------------------------*/
 #include <cstdlib>
 #include <fstream>
+#include <iostream>
 #include "formatted_console_io_v20.h"
 
 using namespace std;
@@ -65,7 +66,7 @@ char mainMenu();
 
 /*
 Name: responseChecker
-Process: Checks to make sure that any of the chars output by mainMenu, are the 
+Process: Checks to make sure that any of the chars output by mainMenu, are the
          correct chars the user should be using, if so, then it will output true.
 Function Input/Parameters: the userInput(char)
 Function Output/Parameters: none
@@ -81,9 +82,9 @@ bool responseChecker( char userInput );
 Name: difficultyMenu
 Process: displays the difficulty settings menu for user. User enters difficulty
          and it will pass back difficulty with its new variable. The function
-         returns true if the user enters a correct char for the difficutly and 
+         returns true if the user enters a correct char for the difficutly and
          false if not.
-Function Input/Parameters: the game difficulty(int) 
+Function Input/Parameters: the game difficulty(int)
 Function Output/Parameters: none
 Function Output/Return: true or false
 Device Input: none
@@ -112,7 +113,7 @@ Name: playScreenWidth
 Process: Takes the difficutly of the game and then outputs what the X cord or what
          the screen limit will be, for the left and right of the playing area of
          the block/cube/player.
-Function Input/Parameters: difficutly(int), leftScreenLimit(int), rightScreenLimit(int) 
+Function Input/Parameters: difficutly(int), leftScreenLimit(int), rightScreenLimit(int)
 Function Output/Parameters: none
 Function Output/Return: none
 Device Input: none
@@ -166,7 +167,7 @@ int randomBetween( int low, int high );
 Name: deleteBottomRow
 Process: It deletes the two bottom rows from the gameGrid and then moves everything
          else within the 2D array down two rows.
-Function Input/Parameters: the gameGrid Array(char) 
+Function Input/Parameters: the gameGrid Array(char)
 Function Output/Parameters: none
 Function Output/Return: none
 Device Input: none
@@ -178,7 +179,7 @@ void deleteBottomRow( char gameGrid[][SCRN_MAX_X] );
 
 /*
 Name: moveBlock
-Process: Checks to see if the userInput allows the block to move in the dirrection speficified. 
+Process: Checks to see if the userInput allows the block to move in the dirrection speficified.
          If the user can move, then the new X and Y's will update. If the user hits the bottom of the
          playing area, or his block lands on top of another block, the function will output true.
 Function Input/Parameters: The userInput(char), the old X & Y and new X & Y(int), the gameGrid(char),
@@ -201,21 +202,21 @@ Function Output/Parameters: none
 Function Output/Return: none
 Device Input: none
 Device Output: cube on screen
-Dependencies: formatted_console_io_v20.h 
+Dependencies: formatted_console_io_v20.h
 
 */
 void showPlayer( int oldX, int oldY, int newX, int newY, int color );
 
 /*
 Name: scoreLoadingModule
-Process: This will display the screen at the end of the playable game asking for 
+Process: This will display the screen at the end of the playable game asking for
          the players name. It will place the players name into an array.
 Function Input/Parameters: the playerName[](char)
 Function Output/Parameters: none
 Function Output/Return: none
 Device Input: none
 Device Output: Text on Screen
-Dependencies: formatted_console_io_v20.h 
+Dependencies: formatted_console_io_v20.h
 
 */
 void scoreLoadingModule( char playerName[] );
@@ -239,7 +240,7 @@ Name: loadScores
 Process: This will load the players name, score, and plays from a .txt and store them into their arrays
 Function Input/Parameters: playerScoresandPlays array(int), playerName array(char)
 Function Output/Parameters: none
-Function Output/Return: int playerScoresandPlays[], char playerName[] 
+Function Output/Return: int playerScoresandPlays[], char playerName[]
 Device Input: none
 Device Output: none
 Dependencies: fstream
@@ -253,10 +254,10 @@ Process: This will display the Scores menu with the player names, scores, and pl
          It will also display the win rate.
 Function Input/Parameters:  int playerScoresandPlays[], char playerName[]
 Function Output/Parameters: none
-Function Output/Return: int playerScoresandPlays[], char playerName[] 
+Function Output/Return: int playerScoresandPlays[], char playerName[]
 Device Input: none
 Device Output: Text on Screen
-Dependencies: formatted_console_io_v20.h 
+Dependencies: formatted_console_io_v20.h
 
 */
 void displayScoresMenu( int playerScoresandPlays[], char playerName[] );
@@ -284,7 +285,7 @@ Function Output/Parameters: none
 Function Output/Return: none
 Device Input: none
 Device Output: Text on screen
-Dependencies: formatted_console_io_v20.h 
+Dependencies: formatted_console_io_v20.h
 
 */
 void displayScore( int score );
@@ -298,7 +299,7 @@ Function Output/Parameters: none
 Function Output/Return: none
 Device Input: none
 Device Output: Text on screen
-Dependencies: formatted_console_io_v20.h 
+Dependencies: formatted_console_io_v20.h
 
 */
 void displayPlays( int plays );
@@ -312,7 +313,7 @@ Function Output/Parameters: none
 Function Output/Return: char gameGrid[][SCRN_MAX_X]
 Device Input: none
 Device Output: Text on screen
-Dependencies: formatted_console_io_v20.h 
+Dependencies: formatted_console_io_v20.h
 
 */
 void displayGameGrid( char gameGrid[][SCRN_MAX_X],int leftScreenLimit, int rightScreenLimit );
@@ -326,7 +327,7 @@ Function Output/Parameters: none
 Function Output/Return: none
 Device Input: none
 Device Output: Text on Screen
-Dependencies: formatted_console_io_v20.h 
+Dependencies: formatted_console_io_v20.h
 
 */
 void pressKeyToStart();
@@ -370,7 +371,7 @@ Function Output/Parameters: none
 Function Output/Return: none
 Device Input: none
 Device Output: Text on Screen
-Dependencies: formatted_console_io_v20.h 
+Dependencies: formatted_console_io_v20.h
 
 */
 void displayGameEnded();
@@ -383,7 +384,7 @@ Function Output/Parameters: none
 Function Output/Return: none
 Device Input: none
 Device Output: Text to Screen
-Dependencies: formatted_console_io_v20.h 
+Dependencies: formatted_console_io_v20.h
 
 */
 void displayStackedToTall();
@@ -396,14 +397,14 @@ Function Output/Parameters: none
 Function Output/Return: none
 Device Input: none
 Device Output: Text on Screen
-Dependencies: formatted_console_io_v20.h 
+Dependencies: formatted_console_io_v20.h
 
 */
 void saveorContinue();
 
 /*
 Name: uploadSaveGame
-Process: Uploads the saved game to the .txt with the difficutly, score, plays, and 
+Process: Uploads the saved game to the .txt with the difficutly, score, plays, and
          positions of the blocks saved in the gameGrid
 Function Input/Parameters: int difficulty, int score, int plays, char gameGrid[][SCRN_MAX_X]
 Function Output/Parameters: none
@@ -436,7 +437,7 @@ Function Output/Parameters: none
 Function Output/Return: none
 Device Input: none
 Device Output: Text on Screen
-Dependencies: formatted_console_io_v20.h 
+Dependencies: formatted_console_io_v20.h
 
 */
 void endScreen();
@@ -449,7 +450,7 @@ Function Output/Parameters: none
 Function Output/Return: none
 Device Input: none
 Device Output: Text on Screen
-Dependencies: formatted_console_io_v20.h 
+Dependencies: formatted_console_io_v20.h
 
 */
 void printBackground();
@@ -462,7 +463,7 @@ Function Output/Parameters: none
 Function Output/Return: none
 Device Input: none
 Device Output: Text on Screen
-Dependencies: formatted_console_io_v20.h 
+Dependencies: formatted_console_io_v20.h
 
 */
 void displayBarInstructions();
@@ -493,7 +494,7 @@ int main()
 
    // Begin loop that will end when user decides to end game
       // do while
-   do  
+   do
       {
       // Begin loop that will display main menu and wait until user inputs correct response
          // do while
@@ -516,7 +517,7 @@ int main()
       // if player has selected set difficulty then display difficulty menu
          // if, else if
       if( (userInput == '1') || (userInput == 'S') || (userInput == 's') )
-         {   
+         {
          // Begin loop that will display difficultyMenu and wait until user inputs correct response
             // while
          do
@@ -536,13 +537,13 @@ int main()
          while( !correctResponse );
          }
          // if user has selected play game or continue previous game, begin game.
-         else if( (userInput == '2') || (userInput == 'P') || (userInput == 'p') || 
+         else if( (userInput == '2') || (userInput == 'P') || (userInput == 'p') ||
                   (userInput == '3') || (userInput == 'C') || (userInput == 'c') )
             {
-            // Display instructions screen 
+            // Display instructions screen
                // showInstructions
             showInstructions();
-               
+
             // Start game
                // Set the score and number of plays to zero
                score = 0;
@@ -568,7 +569,7 @@ int main()
                      // function: playScreenWidth()
                   playScreenWidth( difficulty, leftScreenLimit, rightScreenLimit );
                   }
-            
+
                // Set game display, borders of the playing area.
                   // gameDisplay
                gameDisplay( difficulty );
@@ -583,7 +584,7 @@ int main()
 
                // display the blocks that have already falled and are saved in the gameGrid, blocks will appear if continue previous game is loaded
                   // function: displayGameGrid()
-               displayGameGrid( gameGrid, leftScreenLimit, rightScreenLimit );   
+               displayGameGrid( gameGrid, leftScreenLimit, rightScreenLimit );
 
                // set the X and Y position for the initial blocks spawn position
                   // function: randomBetween
@@ -597,12 +598,12 @@ int main()
                // display message that will inform the player to press any key to begin and then begin
                   // pressKeyToStart()
                pressKeyToStart();
-                
+
                // Begin loop that will loop until player saves the game
                   // do while
                do
                   {
-	
+
                   displayBarInstructions();
 
                   // begin loop that will end when spacebar is pressed to "pause" game
@@ -616,7 +617,7 @@ int main()
                      // display the amount of plays the players has played
                         // function: displayPlays()
                      displayPlays( plays );
- 
+
                      // Get the user input and set the speed at which the blocks fall
                         // waitForInput
                      userInput = userInputInt = waitForInput( blockFallSpeed );
@@ -631,13 +632,13 @@ int main()
 
                         // display the blocks that have already fallen and what they look like after a row is removed
                            // function: displayGameGrid()
-                        displayGameGrid( gameGrid, leftScreenLimit, rightScreenLimit );   
+                        displayGameGrid( gameGrid, leftScreenLimit, rightScreenLimit );
 
                         // Set game display, borders of the playing area.
                            // gameDisplay
-                        gameDisplay( difficulty );   
+                        gameDisplay( difficulty );
                         }
-                  
+
                      // Use the input specified by the user to move the block, if you can
                         // moveBlock
                      hitBottom = moveBlock( userInputInt, oldX, oldY, newX, newY, gameGrid, leftScreenLimit, rightScreenLimit );
@@ -659,7 +660,7 @@ int main()
                         // check to see if the block that just hit the bottom is capable of scoring points for the player
                            // function: scoreChecker()
                         scoreChecker( oldX, oldY, gameGrid, score );
-                     
+
                         // Randomly change the color for the next cube
                            // funtion: randomBetween()
                         color = randomBetween( 1, 5 );
@@ -681,12 +682,12 @@ int main()
 
                      // display the blocks that have already falled and are saved in the gameGrid
                         // function: displayGameGrid()
-                     displayGameGrid( gameGrid, leftScreenLimit, rightScreenLimit );         
+                     displayGameGrid( gameGrid, leftScreenLimit, rightScreenLimit );
 
                      // change the old and new X and Y values
                      oldX = newX;
-                     oldY = newY;           
-                 
+                     oldY = newY;
+
                      }
                   while( (userInput != ' ') && (userInputInt != KB_ESCAPE) && (!hitTop) );
 
@@ -713,7 +714,7 @@ int main()
                         // Display dialogue that will inform user to press S for save
                            // function: saveorContinue()
                         saveorContinue();
-   
+
    	                    // get users input
                            // waitForInput
 	                    userInput = waitForInput( FIXED_WAIT );
@@ -753,7 +754,7 @@ int main()
             // Display player Scores
                // displayScores
             displayScoresMenu( playerScoresandPlays, playerName );
-            
+
 	        }
 
       // Set correctResponse back to false and continue loop
@@ -784,6 +785,8 @@ int main()
 FUNCTION IMPLEMENTATIONS
 -----------------------------------------------------------------------------*/
 
+
+/////////////////////////////////////////////////////////////////////////////////
 void splashScreen()
    {
    // Initialize variables
@@ -792,7 +795,7 @@ void splashScreen()
         int newX, newY, oldX, oldY, blockMove = 0, loopPass = 0;
         int rowIndex, colIndex;
 
-   // Clear screen 
+   // Clear screen
    // Set bacground color to blue
       // setColor
 		setColor ( COLOR_YELLOW, COLOR_BLUE, SET_BRIGHT ) ;
@@ -827,7 +830,7 @@ void splashScreen()
         switch( blockMove )
            {
            case -1 :
-	
+
            if( oldX - 1 > 0 )
               {
               // update x position for left move
@@ -844,7 +847,7 @@ void splashScreen()
 
               color = randomBetween( 1, 5);
 
-              // Clear screen 
+              // Clear screen
               // Set bacground color to blue
               // setColor
 		      setColor ( COLOR_YELLOW, COLOR_BLUE, SET_BRIGHT ) ;
@@ -861,7 +864,7 @@ void splashScreen()
 				// printCharAt
 			printStringAt ( 33, 17, "Kind of like Tetris", "LEFT" );
 			printStringAt ( 35, 19, "by Cody McDonald", "LEFT" );
-              }          
+              }
 
            // otherwise, assume not on bottom of screen
            else
@@ -873,8 +876,8 @@ void splashScreen()
            break;
 
            case 1:
-	
-           if( oldX + 3 < 76 ) 
+
+           if( oldX + 3 < 76 )
               {
               // update x position for right move
               newX = oldX + 1;
@@ -890,7 +893,7 @@ void splashScreen()
 
               color = randomBetween( 1, 5);
 
-              // Clear screen 
+              // Clear screen
               // Set bacground color to blue
               // setColor
 		      setColor ( COLOR_YELLOW, COLOR_BLUE, SET_BRIGHT ) ;
@@ -903,18 +906,18 @@ void splashScreen()
 			printStringAt ( 4, 10, "     TT      EEEEEEE       TT      RRRRRR       II       XX ","LEFT");
 			printStringAt ( 4, 11, "     TT      EE            TT      RR RR        II     XX  XX ","LEFT");
 			printStringAt ( 4, 12, "     TT      EEEEEEEE      TT      RR   RR    IIIIII  XX    XX", "LEFT");
-			// Print the subtitle 
+			// Print the subtitle
 				// printCharAt
 			printStringAt ( 33, 17, "Kind of like Tetris", "LEFT" );
 			printStringAt ( 35, 19, "by Cody McDonald", "LEFT" );
-              }          
+              }
 
            // otherwise, assume not on bottom of screen
            else
               {
               // update y position for downward move
               newY = oldY + 1;
-              }   
+              }
 
            break;
 
@@ -930,7 +933,7 @@ void splashScreen()
 
               color = randomBetween( 1, 5);
 
-              // Clear screen 
+              // Clear screen
               // Set bacground color to blue
               // setColor
 		      setColor ( COLOR_YELLOW, COLOR_BLUE, SET_BRIGHT ) ;
@@ -943,11 +946,11 @@ void splashScreen()
 			printStringAt ( 4, 10, "     TT      EEEEEEE       TT      RRRRRR       II       XX ","LEFT");
 			printStringAt ( 4, 11, "     TT      EE            TT      RR RR        II     XX  XX ","LEFT");
 			printStringAt ( 4, 12, "     TT      EEEEEEEE      TT      RR   RR    IIIIII  XX    XX", "LEFT");
-			// Print the subtitle 
+			// Print the subtitle
 				// printCharAt
 			printStringAt ( 33, 17, "Kind of like Tetris", "LEFT" );
 			printStringAt ( 35, 19, "by Cody McDonald", "LEFT" );
-              }          
+              }
 
            // otherwise, assume not on bottom of screen
            else
@@ -959,8 +962,8 @@ void splashScreen()
 
 
 
-        // print space over the old object 
-   
+        // print space over the old object
+
         // set color for covering old object
            // function: setColor
         setColor( COLOR_WHITE, COLOR_BLUE, SET_BRIGHT );
@@ -1071,78 +1074,80 @@ void splashScreen()
                        printCharAt( newX + colIndex, newY + rowIndex, SPACE );
                     }
                  }
-              }       
+              }
 
         oldX = newX;
         oldY = newY;
 		}
    }
 
+/////////////////////////////////////////////////////////////////////////////////
 char mainMenu()
    {
    // Initialize Varaibles
-   
-   int xPos = 22 , yPos = 3; 
-   char userInput; 
-   
+
+   int xPos = 22 , yPos = 3;
+   char userInput;
+
     // Display background textile
         // Print blocks( spaces, approx 2x2? ) with corresponding pattern
             // function : setColor  ,clearScreen( note: may use brute force for setting blocks or looping )
-                printBackground();                                                 
-            
+                printBackground();
+
     // Display main menu
         // Clear appropriate screen size
 			setColor ( COLOR_BLUE, COLOR_WHITE, SET_BRIGHT );
 			clearScreen ( SCRN_MIN_X +19, SCRN_MIN_Y +2, SCRN_MAX_X -19, SCRN_MAX_Y -3 );
-        // Print Title with underline 
+        // Print Title with underline
             //function: printStringAt
             printStringAt(xPos+11 , yPos  , "TETRIX" , "LEFT");
-            yPos++; 
+            yPos++;
             printStringAt(xPos+11 , yPos  , "======" , "LEFT");
 			yPos+=2;
         // Print option 1
             //function:  printStringAt
              printStringAt(xPos , yPos  , "1. <S>et Difficulty" , "LEFT");
-             yPos+=2; 
+             yPos+=2;
         // Print option 2
             //function : printStringAt
              printStringAt(xPos , yPos  , "2. <P>lay Game" , "LEFT");
-             yPos+=2; 
+             yPos+=2;
         // Print option 3
             //function : printStringAt
              printStringAt(xPos , yPos  , "3. <C>ontinue Previous Game" , "LEFT");
-             yPos+=2; 
+             yPos+=2;
         // Print option 4
             //function: printStringAt
              printStringAt(xPos , yPos  , "4. <D>isplay Scores" , "LEFT");
-             yPos+=2; 
+             yPos+=2;
         // Print option 5
             //function: printStringAt
              printStringAt(xPos , yPos  , "5. <E>nd TETRIX" , "LEFT");
-             yPos+=3; 
-    
-        // Print the enter selection 
+             yPos+=3;
+
+        // Print the enter selection
             //function: printStringAt
-         printStringAt( xPos, yPos, "Enter selection:" , "LEFT"); 
+         printStringAt( xPos, yPos, "Enter selection:" , "LEFT");
 
     // Receive user selection
-        // function: waitForInput 
+        // function: waitForInput
           userInput = waitForInput(-1);
     // Return userInput
 
    return userInput; // Temp Stub Return
    }
 
+/////////////////////////////////////////////////////////////////////////////////
 bool responseChecker( char userInput )
    {
-    // Initialize 
-   
+    // Initialize
+
    // check to see if user input is a correct response
       // if
-   if( (userInput == '1' ) || (userInput == 'S' ) || (userInput == 's' ) || 
-       (userInput == '2' ) || (userInput == 'P' ) || (userInput == 'p' ) || 
-       (userInput == '3' ) || (userInput == 'C' ) || (userInput == 'c' ) || 
-       (userInput == '4' ) || (userInput == 'D' ) || (userInput == 'd' ) || 
+   if( (userInput == '1' ) || (userInput == 'S' ) || (userInput == 's' ) ||
+       (userInput == '2' ) || (userInput == 'P' ) || (userInput == 'p' ) ||
+       (userInput == '3' ) || (userInput == 'C' ) || (userInput == 'c' ) ||
+       (userInput == '4' ) || (userInput == 'D' ) || (userInput == 'd' ) ||
        (userInput == '5' ) || (userInput == 'E' ) || (userInput == 'e' ) )
       {
       return true;
@@ -1153,12 +1158,13 @@ bool responseChecker( char userInput )
       }
    }
 
+/////////////////////////////////////////////////////////////////////////////////
 bool difficultyMenu( int &difficulty )
    {
     	// initialize
 		char userInput;
 		bool inputCheck;
-    
+
     // display menu for user
 		printBackground();
 		setColor ( COLOR_BLUE, COLOR_WHITE, SET_BRIGHT ) ;
@@ -1214,7 +1220,7 @@ bool difficultyMenu( int &difficulty )
 				inputCheck = true;
 				}
 		// esle, bool variable is false
-			else 
+			else
 				{
 				inputCheck = false;
 				}
@@ -1224,6 +1230,7 @@ bool difficultyMenu( int &difficulty )
    return inputCheck; // Temp Stub Return
    }
 
+/////////////////////////////////////////////////////////////////////////////////
 int timeFactor( int difficulty )
    {
     // initialize
@@ -1253,6 +1260,7 @@ int timeFactor( int difficulty )
 	return fallSpeed;
    }
 
+/////////////////////////////////////////////////////////////////////////////////
 void playScreenWidth( int difficulty, int &leftScreenLimit, int &rightScreenLimit )
    {
    // if easy
@@ -1285,46 +1293,49 @@ void playScreenWidth( int difficulty, int &leftScreenLimit, int &rightScreenLimi
       }
    }
 
+
+/////////////////////////////////////////////////////////////////////////////////
 void showInstructions()
    {
-     // Initialize functions , variables 
-     int xPox , yPos ; 	   
+     // Initialize functions , variables
+     int xPox , yPos ;
 
     // Clear screen for proper instruction dimensions
-    //   function: clearScreen , setColor 
+    //   function: clearScreen , setColor
        printBackground();
-       setColor(COLOR_BLUE , COLOR_WHITE , SET_BRIGHT); 
-       clearScreen( SCRN_MIN_X +10 , SCRN_MIN_Y +4 , SCRN_MAX_X -10, SCRN_MAX_Y -5);  
-        
+       setColor(COLOR_BLUE , COLOR_WHITE , SET_BRIGHT);
+       clearScreen( SCRN_MIN_X +10 , SCRN_MIN_Y +4 , SCRN_MAX_X -10, SCRN_MAX_Y -5);
+
 
     // Print the insctructions
         // printStringAt, setColor
 	xPox = SCRN_MIN_X +10;
-    yPos = SCRN_MIN_Y +5; 
+    yPos = SCRN_MIN_Y +5;
 
 	printStringAt(xPox+20 , yPos , "Instruction Module"  , "LEFT");
-        yPos ++; 
+        yPos ++;
 
 	printStringAt(xPox+20 , yPos , "=================="  , "LEFT");
-        yPos += 2; 
+        yPos += 2;
 
 	printStringAt(xPox+13 , yPos , "Try to get three colors in a row"  , "LEFT");
-        yPos += 2; 
-	
+        yPos += 2;
+
 	printStringAt(xPox+15 , yPos , "Vertically or Horizontally"  , "LEFT");
-        yPos += 2; 
+        yPos += 2;
 
 	printStringAt(xPox+4 , yPos , "Use left and right arrows to guide the falling blocks"  , "LEFT");
-        yPos += 2; 
-		
+        yPos += 2;
+
 	printStringAt(xPox+9 , yPos , "Use <D> to remove the bottom row of blocks"  , "LEFT");
-        yPos += 3; 
-	
+        yPos += 3;
+
 	printStringAt(xPox+18 , yPos , "Press Any Key to Continue"  , "LEFT");
-    
-	waitForInput (-1);    
+
+	waitForInput (-1);
    }
 
+/////////////////////////////////////////////////////////////////////////////////
 void gameDisplay( int difficulty )
    {
 	// initialize
@@ -1366,7 +1377,7 @@ void gameDisplay( int difficulty )
 						xIncrease+=2;
 						}
 				printStringAt( SCRN_MIN_X, SCRN_MAX_Y-3, "===|========================================================================|===", "LEFT");
-				
+
 				}
         // if difficulty is moderate
 			else if ( difficulty == MODERATE )
@@ -1498,7 +1509,7 @@ void gameDisplay( int difficulty )
         // print the game pause instructions
             // printStringAt
 			setColor( COLOR_BLUE, COLOR_WHITE, SET_BRIGHT );
-			
+
         // print score
             // printStringAt
 				printStringAt( SCRN_MAX_X -17, SCRN_MAX_Y -2, "Score:", "LEFT");
@@ -1513,7 +1524,7 @@ void gameDisplay( int difficulty )
 				printStringAt( SCRN_MAX_X -22, SCRN_MAX_Y, "Difficulty: Easy", "LEFT");
           		}
 			  // else if  difficulty = moderate
-			else if ( difficulty == MODERATE )	
+			else if ( difficulty == MODERATE )
 				{
                 // printStringAt
 				printStringAt( SCRN_MAX_X -22, SCRN_MAX_Y, "Difficulty: Moderate", "LEFT");
@@ -1532,6 +1543,7 @@ void gameDisplay( int difficulty )
    				}
    }
 
+/////////////////////////////////////////////////////////////////////////////////
 int randomBetween( int low, int high )
    {
     // initialize function/variables
@@ -1543,6 +1555,7 @@ int randomBetween( int low, int high )
     return rand() % range + low;
    }
 
+/////////////////////////////////////////////////////////////////////////////////
 void deleteBottomRow( char gameGrid[][SCRN_MAX_X] )
    {
    // Variables
@@ -1571,6 +1584,7 @@ void deleteBottomRow( char gameGrid[][SCRN_MAX_X] )
       }
    }
 
+/////////////////////////////////////////////////////////////////////////////////
 bool moveBlock( int userInput, int oldX, int oldY, int &newX, int &newY, char gameGrid[][SCRN_MAX_X], int leftScreenLimit, int rightScreenLimit )
    {
    // Variables
@@ -1580,15 +1594,15 @@ bool moveBlock( int userInput, int oldX, int oldY, int &newX, int &newY, char ga
       {
       // right arrow case
       case KB_RIGHT_ARROW:
-    
+
       // check for move
-      if( (oldX + 3 < rightScreenLimit) && (gameGrid[oldY][oldX + 3] == 'E') && 
+      if( (oldX + 3 < rightScreenLimit) && (gameGrid[oldY][oldX + 3] == 'E') &&
           (gameGrid[oldY + 1][oldX + 3] == 'E') &&
           (gameGrid[oldY + 2][oldX + 3] == 'E') )
          {
          // update x position for right move
          newX = oldX + 1;
-         }          
+         }
 
       return false;
 
@@ -1599,14 +1613,14 @@ bool moveBlock( int userInput, int oldX, int oldY, int &newX, int &newY, char ga
       case KB_LEFT_ARROW:
 
       // check for move
-      if( (oldX - 1 >= leftScreenLimit) && (gameGrid[oldY][oldX - 1] == 'E') && 
+      if( (oldX - 1 >= leftScreenLimit) && (gameGrid[oldY][oldX - 1] == 'E') &&
           (gameGrid[oldY + 1][oldX - 1] == 'E') &&
           (gameGrid[oldY + 2][oldX - 1] == 'E') )
          {
          // update x position for left move
          newX = oldX - 1;
          }
- 
+
       return false;
 
       // end case
@@ -1616,7 +1630,7 @@ bool moveBlock( int userInput, int oldX, int oldY, int &newX, int &newY, char ga
       default:
 
       // check for vertical move
-      if( (oldY + 2 > 20) || (gameGrid[oldY + 2][oldX] != 'E') || 
+      if( (oldY + 2 > 20) || (gameGrid[oldY + 2][oldX] != 'E') ||
           (gameGrid[oldY + 2][oldX + 1] != 'E') ||
           (gameGrid[oldY + 2][oldX + 2] != 'E') )
          {
@@ -1625,7 +1639,7 @@ bool moveBlock( int userInput, int oldX, int oldY, int &newX, int &newY, char ga
          newX = randomBetween( leftScreenLimit, rightScreenLimit - 3 );
          newY = 0;
          return true;
-         }          
+         }
 
       // otherwise, assume not on bottom of screen
       else
@@ -1633,21 +1647,22 @@ bool moveBlock( int userInput, int oldX, int oldY, int &newX, int &newY, char ga
          // update y position for downward move
          newY = oldY + 1;
          }
-      
-      return false;      
+
+      return false;
 
       // end case/default
       break;
       }
    }
 
+/////////////////////////////////////////////////////////////////////////////////
 void showPlayer( int oldX, int oldY, int newX, int newY, int color )
    {
    // initialize function / variables
    int rowIndex, colIndex;
 
-   // print space over the old object 
-   
+   // print space over the old object
+
       // set color for covering old object
          // function: setColor
       setColor( COLOR_WHITE, COLOR_BLACK, SET_BRIGHT );
@@ -1682,7 +1697,7 @@ void showPlayer( int oldX, int oldY, int newX, int newY, int color )
                {
                if( (colIndex == 1) && (rowIndex == 0))
                   {
-                  printCharAt( newX + colIndex, newY + rowIndex, 'G' );	
+                  printCharAt( newX + colIndex, newY + rowIndex, 'G' );
 	              }
                else
                   {
@@ -1707,7 +1722,7 @@ void showPlayer( int oldX, int oldY, int newX, int newY, int color )
                {
                if( (colIndex == 1) && (rowIndex == 0))
                   {
-                  printCharAt( newX + colIndex, newY + rowIndex, 'Y' );	
+                  printCharAt( newX + colIndex, newY + rowIndex, 'Y' );
 	              }
                else
                   {
@@ -1732,7 +1747,7 @@ void showPlayer( int oldX, int oldY, int newX, int newY, int color )
                {
                if( (colIndex == 1) && (rowIndex == 0))
                   {
-                  printCharAt( newX + colIndex, newY + rowIndex, 'R' );	
+                  printCharAt( newX + colIndex, newY + rowIndex, 'R' );
 	              }
                else
                   {
@@ -1757,7 +1772,7 @@ void showPlayer( int oldX, int oldY, int newX, int newY, int color )
                {
                if( (colIndex == 1) && (rowIndex == 0))
                   {
-                  printCharAt( newX + colIndex, newY + rowIndex, 'C' );	
+                  printCharAt( newX + colIndex, newY + rowIndex, 'C' );
 	              }
                else
                   {
@@ -1782,7 +1797,7 @@ void showPlayer( int oldX, int oldY, int newX, int newY, int color )
                {
                if( (colIndex == 1) && (rowIndex == 0))
                   {
-                  printCharAt( newX + colIndex, newY + rowIndex, 'M' );	
+                  printCharAt( newX + colIndex, newY + rowIndex, 'M' );
 	              }
                else
                   {
@@ -1792,81 +1807,108 @@ void showPlayer( int oldX, int oldY, int newX, int newY, int color )
                   }
                }
             }
-         }       
+         }
    }
 
+
+/////////////////////////////////////////////////////////////////////////////////
 void scoreLoadingModule( char playerName[] )
    {
-    // Initialize functions , variables 
+    // Initialize functions , variables
      int xPox , yPos, index = 0, rowIndex=0, columnIndex=0;
 
 
    printBackground();
 
     // Clear screen for proper instruction dimensions
-    //   function: clearScreen , setColor 
+    //   function: clearScreen , setColor
        //printBackground();
-       setColor(COLOR_BLUE , COLOR_WHITE , SET_BRIGHT); 
-       clearScreen( SCRN_MIN_X +10 , SCRN_MIN_Y +6 , SCRN_MAX_X -10, SCRN_MAX_Y -7);  
-        
+       setColor(COLOR_BLUE , COLOR_WHITE , SET_BRIGHT);
+       clearScreen( SCRN_MIN_X +10 , SCRN_MIN_Y +6 , SCRN_MAX_X -10, SCRN_MAX_Y -7);
+
 
     // Print the insctructions
         // printStringAt, setColor
 	xPox = SCRN_MIN_X +10;
-    yPos = SCRN_MIN_Y +7; 
+    yPos = SCRN_MIN_Y +7;
 
 	printStringAt(xPox+13 , yPos , "Loading Module"  , "LEFT");
-        yPos ++; 
+        yPos ++;
 
-	printStringAt(xPox+13 , yPos , "=============================="  , "LEFT");
-        yPos += 2; 
+	printStringAt(xPox+13 , yPos , "=============="  , "LEFT");
+        yPos += 2;
 
 	printStringAt(xPox+9 , yPos , "If your score per plays rate is high enough,"  , "LEFT");
-        yPos += 2; 
-	
+        yPos += 2;
+
 	printStringAt(xPox+6 , yPos , "your name and data will be added to the score list"  , "LEFT");
-        yPos += 2; 
+        yPos += 2;
 
 	promptForStringAt ( xPox+12, yPos, "Enter your name: ", playerName );
-   
+
    }
 
+
+/////////////////////////////////////////////////////////////////////////////////
 void scoreFileUploader( char playerName[], int score, int plays )
    {
-   // variables
-   double currentWinRate, otherWinRates;
 
-   currentWinRate = score/plays;
-   
-   //open file
+	//initialize
+		ofstream inFile;
+		inFile.clear();
+	// variables
+	double currentWinRate, otherWinRates;
+
+	currentWinRate = score/plays;
+  /*
+  //open file
+		inFile.open("scorefile.txt");
+	//write score and name to file
+		while(inFile.good())
+		{
+		inFile << scores << dummy << plays << dummy << playerName[index];
+
+		playerScoresandPlays[index2] = plays;
+		playerScoresandPlays[index2+1] = scores;
+
+		index2 +=2;
+		index ++;
+		}
+
 
    // check to see if win rate is higher then currently achieved one
 
-
+   */
    }
 
+
+/////////////////////////////////////////////////////////////////////////////////
 void loadScores( int playerScoresandPlays[], char playerName[] )
    {
 	// initialize
 		ifstream inFile;
 		int scores, plays, index = 0, index2 = 0;
 		char dummy;
-	// open 
+	// open
 		inFile.clear();
 		inFile.open("scorefile.txt");
 	// input file read into array
 		while (inFile.good())
 			{
 			inFile >> scores >> dummy >> plays >> dummy >> playerName[index];
-			
+
 			playerScoresandPlays[index2] = plays;
 			playerScoresandPlays[index2+1] = scores;
 
 			index2 +=2;
 			index ++;
-			}	
+
+			inFile.close();
+			}
    }
 
+
+/////////////////////////////////////////////////////////////////////////////////
 void displayScoresMenu( int playerScoresandPlays[], char playerName[] )
    {
 	// initialize
@@ -1895,23 +1937,25 @@ void displayScoresMenu( int playerScoresandPlays[], char playerName[] )
 			else
 				{
 				for ( index =0, index2=0; index < 10 ; index++, index2+=2 )
-				
+
 					{
 					printIntAt ( SCRN_MIN_X +38, SCRN_MIN_Y +8 +yIncrease, playerScoresandPlays[index2] ,"LEFT");
 					printIntAt ( SCRN_MIN_X +47, SCRN_MIN_Y +8 +yIncrease, playerScoresandPlays[index2+1], "LEFT");
 					printCharAt ( SCRN_MIN_X +15, SCRN_MIN_Y +8 +yIncrease, playerName[index] );
-					
+
 		// divide plays by score for win rate
 		      // printIntAt
 					printDoubleAt ( SCRN_MIN_X +58, SCRN_MIN_Y +8 +yIncrease, (playerScoresandPlays[index2]/playerScoresandPlays[index2+1])*100 , 2 , "LEFT");
 					yIncrease++;
 					}
 				}
-   
+
 	waitForInput( -1 );
 
    }
 
+
+/////////////////////////////////////////////////////////////////////////////////
 void loadSaveGame( char gameGrid[][SCRN_MAX_X], int &difficulty, int &plays, int &score, int leftScreenLimit )
    {
    // initialize
@@ -1930,29 +1974,29 @@ void loadSaveGame( char gameGrid[][SCRN_MAX_X], int &difficulty, int &plays, int
    if( fin.good() )
       {
       // load the difficutly
-      fin.getline( dummyChar, MAX_STR_LEN, COLON ); 
+      fin.getline( dummyChar, MAX_STR_LEN, COLON );
       fin >> difficulty;
 
       // load the score
-      fin.getline( dummyChar, MAX_STR_LEN, COLON ); 
+      fin.getline( dummyChar, MAX_STR_LEN, COLON );
       fin >> score;
 
       // load plays
-      fin.getline( dummyChar, MAX_STR_LEN, COLON ); 
+      fin.getline( dummyChar, MAX_STR_LEN, COLON );
       fin >> plays;
 
       // load the gameGrid/Playing area
        while( fin.good() )
          {
 	     // sort through the characters to get the row
-         fin.getline( dummyChar, MAX_STR_LEN, COLON ); 
+         fin.getline( dummyChar, MAX_STR_LEN, COLON );
          fin >> rowIndex;
 
          // pass over the comma
-         fin.getline( dummyChar, MAX_STR_LEN, COMMA ); 
+         fin.getline( dummyChar, MAX_STR_LEN, COMMA );
 
          // get the row of characters representing saved data and place into array
-         fin.getline( saveGameRow, MAX_STR_LEN, ENDLINE_CHAR );  
+         fin.getline( saveGameRow, MAX_STR_LEN, ENDLINE_CHAR );
 
          // set that arrays index to zero
          index = 0;
@@ -1964,27 +2008,28 @@ void loadSaveGame( char gameGrid[][SCRN_MAX_X], int &difficulty, int &plays, int
 
             gameGrid[rowIndex][colIndex] = saveGameRow[index];
 
-            index++;      
+            index++;
 	        }
          }
       }
    }
-	
+
 void displayScore( int score )
    {
    // Set the color for the plays number
       // function: setColor
-   setColor( COLOR_BLUE, COLOR_WHITE, SET_BRIGHT );	
+   setColor( COLOR_BLUE, COLOR_WHITE, SET_BRIGHT );
 
     // print plays next to plays: on bottom bar
         // printIntAt
    printIntAt( 76, 22, score, "LEFT" );
     }
+
 void displayPlays( int plays )
    {
    // Set the color for the plays number
       // function: setColor
-   setColor( COLOR_BLUE, COLOR_WHITE, SET_BRIGHT );	
+   setColor( COLOR_BLUE, COLOR_WHITE, SET_BRIGHT );
 
     // print plays next to plays: on bottom bar
         // printIntAt
@@ -2021,10 +2066,10 @@ void displayGameGrid( char gameGrid[][SCRN_MAX_X],int leftScreenLimit, int right
                   {
                   for( blockColIndex = 0; blockColIndex < OBJECT_WIDTH; blockColIndex++ )
                      {
-	
+
                      if( (blockColIndex == 1) && (blockRowIndex == 0))
                         {
-                        printCharAt( colIndex + blockColIndex, rowIndex + blockRowIndex, 'C' );	
+                        printCharAt( colIndex + blockColIndex, rowIndex + blockRowIndex, 'C' );
 	                    }
                      else
                         {
@@ -2034,7 +2079,7 @@ void displayGameGrid( char gameGrid[][SCRN_MAX_X],int leftScreenLimit, int right
                   }
 
                // add 3 to the colIndex to make it skip the block it just printed
-               colIndex = colIndex + 2;               
+               colIndex = colIndex + 2;
 
 	           }
             else if( gameGrid[rowIndex][colIndex] == 'R' )
@@ -2047,10 +2092,10 @@ void displayGameGrid( char gameGrid[][SCRN_MAX_X],int leftScreenLimit, int right
                   {
                   for( blockColIndex = 0; blockColIndex < OBJECT_WIDTH; blockColIndex++ )
                      {
-	
+
                      if( (blockColIndex == 1) && (blockRowIndex == 0))
                         {
-                        printCharAt( colIndex + blockColIndex, rowIndex + blockRowIndex, 'R' );	
+                        printCharAt( colIndex + blockColIndex, rowIndex + blockRowIndex, 'R' );
 	                    }
                      else
                         {
@@ -2060,7 +2105,7 @@ void displayGameGrid( char gameGrid[][SCRN_MAX_X],int leftScreenLimit, int right
                   }
 
                // add 3 to the colIndex to make it skip the block it just printed
-               colIndex = colIndex + 2; 
+               colIndex = colIndex + 2;
 
 	           }
             else if( gameGrid[rowIndex][colIndex] == 'Y' )
@@ -2073,10 +2118,10 @@ void displayGameGrid( char gameGrid[][SCRN_MAX_X],int leftScreenLimit, int right
                   {
                   for( blockColIndex = 0; blockColIndex < OBJECT_WIDTH; blockColIndex++ )
                      {
-	
+
                      if( (blockColIndex == 1) && (blockRowIndex == 0))
                         {
-                        printCharAt( colIndex + blockColIndex, rowIndex + blockRowIndex, 'Y' );	
+                        printCharAt( colIndex + blockColIndex, rowIndex + blockRowIndex, 'Y' );
 	                    }
                      else
                         {
@@ -2086,7 +2131,7 @@ void displayGameGrid( char gameGrid[][SCRN_MAX_X],int leftScreenLimit, int right
                   }
 
                // add 3 to the colIndex to make it skip the block it just printed
-               colIndex = colIndex + 2; 
+               colIndex = colIndex + 2;
 
                }
             else if( gameGrid[rowIndex][colIndex] == 'M' )
@@ -2099,10 +2144,10 @@ void displayGameGrid( char gameGrid[][SCRN_MAX_X],int leftScreenLimit, int right
                   {
                   for( blockColIndex = 0; blockColIndex < OBJECT_WIDTH; blockColIndex++ )
                      {
-	
+
                      if( (blockColIndex == 1) && (blockRowIndex == 0))
                         {
-                        printCharAt( colIndex + blockColIndex, rowIndex + blockRowIndex, 'M' );	
+                        printCharAt( colIndex + blockColIndex, rowIndex + blockRowIndex, 'M' );
 	                    }
                      else
                         {
@@ -2112,7 +2157,7 @@ void displayGameGrid( char gameGrid[][SCRN_MAX_X],int leftScreenLimit, int right
                   }
 
                // add 3 to the colIndex to make it skip the block it just printed
-               colIndex = colIndex + 2; 
+               colIndex = colIndex + 2;
 
 	           }
             else if( gameGrid[rowIndex][colIndex] == 'G' )
@@ -2125,10 +2170,10 @@ void displayGameGrid( char gameGrid[][SCRN_MAX_X],int leftScreenLimit, int right
                   {
                   for( blockColIndex = 0; blockColIndex < OBJECT_WIDTH; blockColIndex++ )
                      {
-	
+
                      if( (blockColIndex == 1) && (blockRowIndex == 0))
                         {
-                        printCharAt( colIndex + blockColIndex, rowIndex + blockRowIndex, 'G' );	
+                        printCharAt( colIndex + blockColIndex, rowIndex + blockRowIndex, 'G' );
 	                    }
                      else
                         {
@@ -2138,7 +2183,7 @@ void displayGameGrid( char gameGrid[][SCRN_MAX_X],int leftScreenLimit, int right
                   }
 
                // add 3 to the colIndex to make it skip the block it just printed
-               colIndex = colIndex + 2; 
+               colIndex = colIndex + 2;
 
 	           }
             else if( gameGrid[rowIndex][colIndex] == 'W' )
@@ -2156,7 +2201,7 @@ void displayGameGrid( char gameGrid[][SCRN_MAX_X],int leftScreenLimit, int right
                   }
 
                // add 3 to the colIndex to make it skip the block it just printed
-               colIndex = colIndex + 2; 
+               colIndex = colIndex + 2;
 
 	           }
             }
@@ -2188,7 +2233,7 @@ void loadNewBlock( int oldX, int oldY, char gameGrid[][SCRN_MAX_X], int color )
          if( color == GREEN)
             {
 	        gameGrid[rowIndex + oldY][colIndex + oldX] = 'G';
-            }	
+            }
          else if( color == YELLOW)
             {
 	        gameGrid[rowIndex + oldY][colIndex + oldX] = 'Y';
@@ -2204,7 +2249,7 @@ void loadNewBlock( int oldX, int oldY, char gameGrid[][SCRN_MAX_X], int color )
          else if( color == MAGENTA)
             {
 	        gameGrid[rowIndex + oldY][colIndex + oldX] = 'M';
-            }	
+            }
 
          }
 	  }
@@ -2237,12 +2282,12 @@ void scoreChecker( int oldX, int oldY, char gameGrid[][SCRN_MAX_X],int &score )
          }
       }
 
-   if( (gameGrid[oldY][oldX - 6] == blockColor) && (gameGrid[oldY][oldX - 5] == blockColor) && (gameGrid[oldY][oldX - 4] == blockColor) && 
+   if( (gameGrid[oldY][oldX - 6] == blockColor) && (gameGrid[oldY][oldX - 5] == blockColor) && (gameGrid[oldY][oldX - 4] == blockColor) &&
        (gameGrid[oldY][oldX - 3] == blockColor) && (gameGrid[oldY][oldX - 2] == blockColor) && (gameGrid[oldY][oldX - 1] == blockColor) )
       {
 	  // award points
 	  score = score + 3;
-      
+
       // set blocks that scored to white
       for( rowIndex = 0; rowIndex < OBJECT_HEIGHT; rowIndex++ )
          {
@@ -2281,18 +2326,18 @@ void scoreChecker( int oldX, int oldY, char gameGrid[][SCRN_MAX_X],int &score )
 	              gameGrid[rowIndex + oldY][colIndex + (oldX + 6)] = 'W';
 	              }
 	           }
- 
-            
-            } 
-         } 
+
+
+            }
+         }
       }
-   else if( (gameGrid[oldY][oldX - 3] == blockColor) && (gameGrid[oldY][oldX - 2] == blockColor) && (gameGrid[oldY][oldX - 1] == blockColor) && 
+   else if( (gameGrid[oldY][oldX - 3] == blockColor) && (gameGrid[oldY][oldX - 2] == blockColor) && (gameGrid[oldY][oldX - 1] == blockColor) &&
             (gameGrid[oldY][oldX + 3] == blockColor) && (gameGrid[oldY][oldX + 4] == blockColor) && (gameGrid[oldY][oldX + 5] == blockColor) )
       {
 	  // award points
 	  score = score + 3;
 
-      	  
+
       // set blocks that scored to white
       for( rowIndex = 0; rowIndex < OBJECT_HEIGHT; rowIndex++ )
          {
@@ -2318,13 +2363,13 @@ void scoreChecker( int oldX, int oldY, char gameGrid[][SCRN_MAX_X],int &score )
 	        }
          }
       }
-   else if( (gameGrid[oldY][oldX + 3] == blockColor) && (gameGrid[oldY][oldX + 4] == blockColor) && (gameGrid[oldY][oldX + 5] == blockColor) && 
+   else if( (gameGrid[oldY][oldX + 3] == blockColor) && (gameGrid[oldY][oldX + 4] == blockColor) && (gameGrid[oldY][oldX + 5] == blockColor) &&
             (gameGrid[oldY][oldX + 6] == blockColor) && (gameGrid[oldY][oldX + 7] == blockColor) && (gameGrid[oldY][oldX + 8] == blockColor) )
       {
 		  // award points
 	  score = score + 3;
 
-      	  
+
       // set blocks that scored to white
       for( rowIndex = 0; rowIndex < OBJECT_HEIGHT; rowIndex++ )
          {
@@ -2333,33 +2378,33 @@ void scoreChecker( int oldX, int oldY, char gameGrid[][SCRN_MAX_X],int &score )
             gameGrid[rowIndex + oldY][colIndex + oldX] = 'W';
             }
          }
-	
+
 
       }
    }
 
 void displayGameEnded()
    {
-   // Initialize functions , variables 
-     int XPox , yPos ; 	   
+   // Initialize functions , variables
+     int XPox , yPos ;
 
     // Clear screen for proper instruction dimensions
-    //   function: clearScreen , setColor 
+    //   function: clearScreen , setColor
     //
-       setColor(COLOR_BLUE , COLOR_BLACK , SET_BRIGHT); 
-       clearScreen( SCRN_MIN_X +10 , SCRN_MIN_Y +5 , SCRN_MAX_X -10, SCRN_MAX_Y -5);  
-        
+       setColor(COLOR_BLUE , COLOR_BLACK , SET_BRIGHT);
+       clearScreen( SCRN_MIN_X +10 , SCRN_MIN_Y +5 , SCRN_MAX_X -10, SCRN_MAX_Y -5);
 
-    // Print the game End Messages 
+
+    // Print the game End Messages
         // printStringAt, setColor
 	XPox = SCRN_MIN_X +10;
-        yPos = 	SCRN_MIN_Y +5; 
+        yPos = 	SCRN_MIN_Y +5;
 
 	printStringAt(XPox , yPos , "Msg1"  , "LEFT");
-        yPos += 2; 
+        yPos += 2;
 
 	printStringAt(XPox , yPos , " Msg2"  , "LEFT");
-        yPos += 2; 
+        yPos += 2;
    }
 
 void displayStackedToTall()
@@ -2390,29 +2435,27 @@ void uploadSaveGame( int difficulty, int score, int plays, char gameGrid[][SCRN_
    {
     // initialize variables
      ifstream fin;
-     int row = 0 , col = 0; 
-     char comma;  
-     fin.open("savegame.txt"); 
+     int row = 0 , col = 0;
+     char comma;
+     fin.open("savegame.txt");
     // Open save game
     fin>>score>>comma>>difficulty>>comma>>plays;
     for ( col = 0 ; col < SCRN_MAX_Y ; col++)
     {
              fin>>gameGrid[row][col];
 
-    }	    
+    }
     while(fin.good())
     {
-        col++; 
+        col++;
 	for ( col = 0 ; col < SCRN_MAX_Y ; col++)
         {
              fin>>gameGrid[row][col];
 
-        }	    
-   
+        }
+
 
     }
-
-       
     // Read game into array
         // start loop
    }
@@ -2438,7 +2481,7 @@ void endScreen()
     // Display background textile
         // Print blocks( spaces, approx 2x2? ) with corresponding pattern
             // function : setColor  ,clearScreen( note: may use brute force for setting blocks or looping )
-                printBackground();   	
+                printBackground();
 
      // clear screen to dimensions
 		setColor ( COLOR_BLUE, COLOR_WHITE, SET_BRIGHT );
@@ -2463,7 +2506,7 @@ void printBackground()
 	// print blocks
 	do
 		{
-		
+
 		while ( yCord < 26 )
 			{
 			setColor ( COLOR_YELLOW, COLOR_RED, SET_BRIGHT );
@@ -2473,9 +2516,9 @@ void printBackground()
 			printCharAt( xCord, yCord+1, ' ' );
 			printCharAt( xCord+1, yCord+1, ' ' );
 			printCharAt( xCord+2, yCord+1, ' ' );
-			
+
 			yCord +=2;
-			
+
 			setColor ( COLOR_YELLOW, COLOR_CYAN, SET_BRIGHT );
 			printCharAt( xCord, yCord, ' ' );
 			printCharAt( xCord+1, yCord, ' ' );
@@ -2483,13 +2526,13 @@ void printBackground()
 			printCharAt( xCord, yCord+1, ' ' );
 			printCharAt( xCord+1, yCord+1, ' ' );
 			printCharAt( xCord+2, yCord+1, ' ' );
-			
+
 			yCord +=2;
 	  		}
-	
+
 			yCord = 0;
 			xCord += 3;
-	
+
 		while ( yCord < 26 )
 			{
 			setColor ( COLOR_YELLOW, COLOR_BLUE, SET_BRIGHT );
@@ -2499,9 +2542,9 @@ void printBackground()
 			printCharAt( xCord, yCord+1, ' ' );
 			printCharAt( xCord+1, yCord+1, ' ' );
 			printCharAt( xCord+2, yCord+1, ' ' );
-			
+
 			yCord +=2;
-			
+
 			setColor ( COLOR_YELLOW, COLOR_MAGENTA, SET_BRIGHT );
 			printCharAt( xCord, yCord, ' ' );
 			printCharAt( xCord+1, yCord, ' ' );
@@ -2511,10 +2554,10 @@ void printBackground()
 			printCharAt( xCord+2, yCord+1, ' ' );
 			yCord +=2;
 	  		}
-	
+
 			yCord = 0;
 			xCord +=3;
-	
+
 		while ( yCord < 26 )
 			{
 			setColor ( COLOR_YELLOW, COLOR_GREEN, SET_BRIGHT );
@@ -2524,9 +2567,9 @@ void printBackground()
 			printCharAt( xCord, yCord+1, ' ' );
 			printCharAt( xCord+1, yCord+1, ' ' );
 			printCharAt( xCord+2, yCord+1, ' ' );
-			
+
 			yCord +=2;
-			
+
 			setColor ( COLOR_BLUE, COLOR_YELLOW, SET_BRIGHT );
 			printCharAt( xCord, yCord, ' ' );
 			printCharAt( xCord+1, yCord, ' ' );
@@ -2534,18 +2577,18 @@ void printBackground()
 			printCharAt( xCord, yCord+1, ' ' );
 			printCharAt( xCord+1, yCord+1, ' ' );
 			printCharAt( xCord+2, yCord+1, ' ' );
-			
+
 			yCord +=2;
 			}
 			xCord += 3;
 			yCord = 0;
 		}
 		while ( xCord < 74 );
-	}	
+	}
 
 void displayBarInstructions()
 	{
-	
+
 // clear screen over bottom bar text
 		setColor ( COLOR_BLUE, COLOR_WHITE, SET_BRIGHT );
 		clearScreen( SCRN_MIN_X +10, SCRN_MIN_Y +22, SCRN_MAX_X - 19, SCRN_MAX_Y );
@@ -2557,10 +2600,3 @@ void displayBarInstructions()
 
 
 	}
-
-
-
-
-
-
-
